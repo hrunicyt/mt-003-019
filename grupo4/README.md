@@ -1,6 +1,6 @@
-# Readme file for grupo0
+# Readme file for grupo4
 
-This group contains information about the grupo0 project. It contains information about the initialization of your application using the `kubectl` command or `helm` charts.
+This group contains information about the grupo4 project. It contains information about the initialization of your application using the `kubectl` command or `helm` charts.
 
 The main idea is that in this group0 the manifests or charts that will serve as the basis for the additional groups to build their manifests or apply the charts are shown.
 
@@ -8,7 +8,7 @@ After having made a review about the servers, processors, infrastructure and coh
 
 Remember that the delivery of the report for this integrating project must be carried out according to the PechaKucha recommendation.
 
-In this `group0` you will find a couple of directories: **k8s** and **Helm**.
+In this `group4` you will find a couple of directories: **k8s** and **Helm**.
 
 In both you will find the information to carry out the deployment of the selected application: *in this case a simple installation of WordPress.*
 
@@ -50,7 +50,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: wp-pv-claim
-  namespace: grupo0        <-- HERE YOUR NAMESPACE
+  namespace: grupo4        <-- HERE YOUR NAMESPACE
   labels:
     app: wordpress
 spec:
