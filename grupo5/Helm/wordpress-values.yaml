@@ -1,0 +1,51 @@
+fullnameOverride: "grupo5-wordpress"
+wordpressUsername: user
+wordpressPassword: "CHANGEME"
+wordpressEmail: me@localdomain.localhost
+wordpressFirstName: FirstName CHANGEME
+wordpressLastName: LastName CHANGEME
+wordpressBlogName: Group Zero user's Blog!
+wordpressTablePrefix: wp_
+wordpressScheme: http
+wordpressSkipInstall: false
+resources:
+  limits: {}
+  requests:
+    memory: 512Mi
+    cpu: 300m
+containerPorts:
+  http: 8080
+  https: 8443
+podSecurityContext:
+  enabled: true
+  fsGroup: 1001
+  seccompProfile:
+    type: "RuntimeDefault"
+containerSecurityContext:
+  enabled: true
+  runAsUser: 1001
+  runAsNonRoot: true
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: false
+  capabilities:
+    drop: ["ALL"]
+service:
+  type: ClusterIP
+  ports:
+    http: 80
+    https: 443
+  httpsTargetPort: https
+  externalTrafficPolicy: Cluster
+persistence:
+  enabled: true
+  size: 10Gi
+mariadb:
+  auth:
+    rootPassword: "mdbg0-password"
+    database: bitnami_wordpress
+    username: bn_wordpress
+    password: "mdbg0-pass"
+  primary:
+    persistence:
+      enabled: true
+      size: 18Gi
