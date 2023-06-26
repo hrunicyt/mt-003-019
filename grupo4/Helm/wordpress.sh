@@ -15,7 +15,7 @@
 # ./wordpress.sh
 #
 # validate with an port-forwarding
-# kubectl -n grupo0 port-forward svc/grupo0-wordpress 9000:80
+# kubectl -n grupo4 port-forward svc/grupo4-wordpress 9000:80
 #
 # open browser at http://localhost:9000
 
@@ -25,7 +25,7 @@ helm repo add bitnami https://charts.bitnami.com/bitnami;
 helm repo update;
 
 helm  upgrade \
---install grupo0-wordpress bitnami/wordpress \
---namespace=grupo0 \
+--install grupo4-wordpress bitnami/wordpress \
+--namespace=grupo4 \
 --version="16.1.18" \
 -f ./wordpress-values.yaml
