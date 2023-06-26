@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: wordpress
-  namespace: grupo0
+  namespace: grupo1
   labels:
     app: wordpress
 spec:
@@ -18,7 +18,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: wp-pv-claim
-  namespace: grupo0
+  namespace: grupo1
   labels:
     app: wordpress
 spec:
@@ -32,7 +32,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wordpress
-  namespace: grupo0
+  namespace: grupo1
   labels:
     app: wordpress
 spec:
@@ -61,13 +61,13 @@ spec:
               key: password
         - name: WORDPRESS_DB_USER
           value: wordpress
-        # resources:
-        #   limits:
-        #     cpu: 1000m
-        #     memory: 1024Mi
-        #   requests:
-        #     cpu: 100m
-        #     memory: 256Mi
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 2048Mi
+          requests:
+            cpu: 100m
+            memory: 256Mi
         ports:
         - containerPort: 80
           name: wordpress

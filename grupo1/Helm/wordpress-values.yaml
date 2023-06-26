@@ -1,15 +1,17 @@
-fullnameOverride: "grupo0-wordpress"
+fullnameOverride: "grupo1-wordpress"
 wordpressUsername: user
-wordpressPassword: "CHANGEME"
-wordpressEmail: me@localdomain.localhost
-wordpressFirstName: FirstName CHANGEME
-wordpressLastName: LastName CHANGEME
+wordpressPassword: "ahreifaiyie3ahTa"
+wordpressEmail: karely.silva@unicyt.net
+wordpressFirstName: grupo1
+wordpressLastName: grupo1
 wordpressBlogName: Group Zero user's Blog!
 wordpressTablePrefix: wp_
 wordpressScheme: http
 wordpressSkipInstall: false
 resources:
-  limits: {}
+  limits:
+    cpu: 2000m
+    memory: 2048Mi
   requests:
     memory: 512Mi
     cpu: 300m
