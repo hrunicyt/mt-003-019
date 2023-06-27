@@ -68,13 +68,13 @@ spec:
             secretKeyRef:
               name: mysql-pass
               key: password
-        # resources:
-        #   limits:
-        #     cpu: 7000m
-        #     memory: 3024Mi
-        #   requests:
-        #     cpu: 100m
-        #     memory: 256Mi
+        resources:
+          limits:
+            cpu: 700m
+            memory: 1024Mi
+          requests:
+            cpu: 100m
+            memory: 256Mi
         ports:
         - containerPort: 3306
           name: mysql
